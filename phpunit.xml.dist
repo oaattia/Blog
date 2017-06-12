@@ -13,8 +13,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Blog Test Suite">
+            <directory>src/Oaattia/*Bundle/Tests</directory>
         </testsuite>
     </testsuites>
 
