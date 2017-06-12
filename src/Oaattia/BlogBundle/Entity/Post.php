@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="Oaattia\BlogBundle\Repository\PostRepository")
  */
-class Post
+class Post extends Entity
 {
     /**
      * @var int

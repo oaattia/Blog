@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="tag")
  * @ORM\Entity(repositoryClass="Oaattia\BlogBundle\Repository\TagRepository")
  */
-class Tag
+class Tag extends Entity
 {
     /**
      * @var int
