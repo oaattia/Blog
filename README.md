@@ -1,4 +1,4 @@
-Blog ( built by Symfony framework )
+Blog ( built on Symfony framework )
 ====================================
 TO BE ADDED.
 
