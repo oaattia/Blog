@@ -2,6 +2,7 @@
 
 namespace Oaattia\BlogBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -34,8 +35,25 @@ class Post
      * @ORM\Column(name="body", type="text")
      */
     private $body;
-
-
+    
+    
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="tags")
+     * @ORM\JoinTable(name="posts_tags")
+     */
+    private $tags;
+    
+    /**
+     * Post constructor.
+     *
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+    
     /**
      * Get id
      *
