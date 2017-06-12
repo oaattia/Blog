@@ -40,10 +40,11 @@ class Post
     /**
      * @var integer
      *
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="tags")
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="tags", cascade={"persist"})
      * @ORM\JoinTable(name="posts_tags")
      */
     private $tags;
+    
     
     /**
      * Post constructor.
@@ -110,6 +111,28 @@ class Post
     public function getBody()
     {
         return $this->body;
+    }
+    
+    /**
+     * @return int
+     */
+    public function getTags()
+    {
+        return $this->tags->toArray();
+    }
+    
+    /**
+     * @param Tag $tag
+     *
+     * @return Post
+     */
+    public function setTags(Tag $tag)
+    {
+        if( !$this->tags->contains($tag) ) {
+            $this->tags->add($tag);
+        }
+        
+        return $this;
     }
 }
 

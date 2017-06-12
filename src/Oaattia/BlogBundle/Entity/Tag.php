@@ -79,5 +79,25 @@ class Tag
         return $this;
     }
     
+    /**
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+    
+    /**
+     * @param mixed $posts
+     *
+     * @return Tag
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+        
+        return $this;
+    }
+    
 }
 
