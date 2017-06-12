@@ -1,0 +1,10 @@
+Oaattia\BlogBundle\Entity\Post:
+    post{1..10}:
+        title: '<title()>'
+        body: '<text(100)>'
+        tags: '@tag*'
+
+Oaattia\BlogBundle\Entity\Tag:
+    tag{1..10}:
+        title: '<text(10)>'
+        posts: '@post*'

@@ -84,17 +84,17 @@ class Tag extends Entity
      */
     public function getPosts()
     {
-        return $this->posts;
+        return $this->posts->toArray();
     }
     
     /**
-     * @param mixed $posts
+     * @param $post
      *
      * @return Tag
      */
-    public function setPosts($posts)
+    public function setPosts($post)
     {
-        $this->posts = $posts;
+        $this->posts->add($post);
         
         return $this;
     }
