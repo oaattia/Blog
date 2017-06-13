@@ -3,13 +3,19 @@
 namespace Oaattia\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
-    public function loginAction()
+    /**
+     * Login form action
+     *
+     * @param AuthenticationUtils $authUtils
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function loginAction(AuthenticationUtils $authUtils)
     {
-        $authUtils = $this->get('security.authentication_utils');
-
         // get the login error if there is one
         $error = $authUtils->getLastAuthenticationError();
 
