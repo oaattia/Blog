@@ -3,8 +3,19 @@ Oaattia\BlogBundle\Entity\Post:
         title: '<title()>'
         body: '<text(100)>'
         tags: '@tag*'
+        createdAt: <dateTimeBetween("-100 days", "now")>
+        updatedAt: <dateTimeBetween($createdAt, "now")>
 
 Oaattia\BlogBundle\Entity\Tag:
     tag{1..10}:
         title: '<text(10)>'
         posts: '@post*'
+        createdAt: <dateTimeBetween("-100 days", "now")>
+        updatedAt: <dateTimeBetween($createdAt, "now")>
+
+Oaattia\BlogBundle\Entity\User:
+    user{1..10}:
+        email: <email()>
+        createdAt: <dateTimeBetween("-100 days", "now")>
+        updatedAt: <dateTimeBetween($createdAt, "now")>
+

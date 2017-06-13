@@ -7,4 +7,10 @@
     <route id="oaattia.blog.homepage" path="/">
         <default key="_controller">BlogBundle:Default:index</default>
     </route>
+
+    <route id="oaattia.blog.login" path="/login">
+        <default key="_controller">BlogBundle:Security:login</default>
+    </route>
+
+
 </routes>
